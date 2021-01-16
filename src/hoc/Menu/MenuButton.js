@@ -16,7 +16,8 @@ const ButtonStyle = styled.div`
   }
   i {
     font-size: 50px;
-    transform: translateY(10%);
+    transform: translateX(-10%);
+    margin-top: 10px;
   }
   span {
     position: absolute;
