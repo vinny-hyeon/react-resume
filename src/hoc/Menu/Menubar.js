@@ -25,12 +25,11 @@ function Menubar(props) {
   const renderMenus = (arr) => {
     return arr.map((menu, idx) => (
       <MenuButton
-        showPage={props.showPage}
+        handleChange={props.handleChange}
         key={idx}
         icon={menu.icon}
         color={menu.color}
         text={menu.text}
-        index={idx}
       />
     ));
   };
