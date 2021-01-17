@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FlexBox } from "../reuseable/styles";
 import profile from "../../img/profile.jpg";
-import { Icon } from "semantic-ui-react";
+import { Flag, Icon } from "semantic-ui-react";
 import { myInfos, linkData } from "../../myInfo/_intro";
 
 const IntroContainer = styled.div`
@@ -24,6 +24,7 @@ const IntroContainer = styled.div`
   .job {
     color: #aaa;
     font-size: 18px;
+    font-weight: bold;
     letter-spacing: 0.9px;
   }
   .name {
@@ -96,9 +97,10 @@ function Intro(props) {
             <img className="me" alt="프로필 사진" src={profile} />
           </div>
           <div className="flex-6" style={{ paddingTop: "30px" }}>
-            <div className="job">프론트앤드 개발자</div>
+            <div className="job">Frontend Developer</div>
             <div className="name" style={{ marginTop: "15px" }}>
               권현빈
+              <Flag name="kr" />
             </div>
             <br />
             {renderMyInfos(myInfos)}
