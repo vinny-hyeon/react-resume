@@ -11,6 +11,6 @@ export const rnProject = [
     period: "2020.05 ~ 2020.08",
     title: "뭐뭑지?(주변 식당 추천어플)",
     content: "내용",
-    playstore: "https://play.google.com/store/apps/details?id=com.randomfood",
+    playStore: "https://play.google.com/store/apps/details?id=com.randomfood",
   },
 ];
