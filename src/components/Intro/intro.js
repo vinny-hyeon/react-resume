@@ -65,13 +65,15 @@ const IconsBox = styled.div`
   }
 `;
 
-function Intro() {
+function Intro(props) {
   const renderMyInfos = (arr) => {
     return arr.map((info, idx) => (
       <FlexBox>
         <div className="flex-2 label">{info.label}</div>
         <div className="flex-1">&nbsp;</div>
-        <div className="flex-6">{info.data}</div>
+        <div className="flex-6" style={{ marginRight: "45px" }}>
+          {info.data}
+        </div>
       </FlexBox>
     ));
   };
@@ -87,7 +89,7 @@ function Intro() {
   };
 
   return (
-    <div>
+    <div ref={(el) => (props.focusTarget.current[0] = el)}>
       <IntroContainer>
         <FlexBox>
           <div className="flex-4" style={{ padding: "25px" }}>
