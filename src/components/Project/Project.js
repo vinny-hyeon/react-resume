@@ -11,9 +11,15 @@ const ProjectContainer = styled.div`
   .linkTitle {
     margin-left: 50px;
     text-align: right;
+    font-weight: bold;
+    font-size: 20px;
+    color: #888c89;
   }
   i {
-    font-size: 20px;
+    font-size: 25px;
+  }
+  i:hover {
+    font-size: 27px;
   }
   hr {
     width: 90%;
@@ -45,6 +51,39 @@ function Project(props) {
     project.color = "#5CD3F3";
     project.index = 2;
   }
+  const renderLink = (obj) => {
+    const iconNameColor = {
+      github: ["github", "#24292e"],
+      manual: ["file pdf outline", "#bf5d7a"],
+      playStore: ["google play", "#01e871"],
+      youtube: ["youtube play", "#ff0000"],
+      url: ["google", ""],
+    };
+
+    return ["github", "manual", "playStore", "youtube", "url"].map(
+      (platform) => {
+        return (
+          obj[platform] && (
+            <div>
+              <FlexBox>
+                <div className="flex-2 linkTitle">{platform}</div>
+                <div className="flex-1">&nbsp;</div>
+                <div className="flex-7">
+                  <a href={obj[platform]} target="_blank">
+                    <Icon
+                      style={{ color: iconNameColor[platform][1] }}
+                      name={iconNameColor[platform][0]}
+                    />
+                  </a>
+                </div>
+              </FlexBox>
+              <br />
+            </div>
+          )
+        );
+      }
+    );
+  };
   const renderProject = (arr) => {
     return arr.map((ele) => {
       return (
@@ -61,29 +100,8 @@ function Project(props) {
               </ContentContainer>
             </div>
           </FlexBox>
-          {ele.github && (
-            <FlexBox>
-              <div className="flex-2 linkTitle">Github</div>
-              <div className="flex-1">&nbsp;</div>
-              <div className="flex-7">
-                <a href={ele.github} target="_blank">
-                  <Icon name="github" />
-                </a>
-              </div>
-            </FlexBox>
-          )}
-          {ele.manual && (
-            <FlexBox>
-              <div className="flex-2 linkTitle">Manual</div>
-              <div className="flex-1">&nbsp;</div>
-              <div className="flex-7">
-                <a href={ele.manual} target="_blank">
-                  <Icon name="file pdf outline" />
-                </a>
-              </div>
-            </FlexBox>
-          )}
-
+          <br />
+          {renderLink(ele)}
           <hr />
         </div>
       );
