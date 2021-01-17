@@ -30,7 +30,7 @@ const ButtonStyle = styled.div`
 function MenuButton(props) {
   return (
     <ButtonStyle
-      onClick={() => props.showPage(props.index)}
+      onClick={() => props.handleChange(props.text)}
       color={props.color}
     >
       <Icon name={props.icon} />
