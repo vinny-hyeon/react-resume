@@ -13,8 +13,6 @@ function App() {
     });
     focusTarget.current[obj[value]].scrollIntoView({
       behavior: "smooth",
-      block: "nearest",
-      inline: "start",
     });
   };
   const handleChange = (value) => {
