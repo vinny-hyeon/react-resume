@@ -1,5 +1,4 @@
 import React from "react";
-import Project from "./Project";
 import styled from "styled-components";
 
 const StyleContainer = styled.div`
@@ -12,16 +11,14 @@ const StyleContainer = styled.div`
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 `;
 
-function Container(props) {
+function Experience(props) {
   return (
-    <div>
+    <div ref={(el) => (props.focusTarget.current[3] = el)}>
       <StyleContainer>
-        <h1>Project</h1>
-        <Project focusTarget={props.focusTarget} tech="ReactNative" />
-        <Project focusTarget={props.focusTarget} tech="React" />
+        <h1>Experience</h1>
       </StyleContainer>
     </div>
   );
 }
 
-export default Container;
+export default Experience;
