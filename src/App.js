@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
+import Progressbar from "./hoc/Progress/Progressbar";
 import Menubar from "./hoc/Menu/Menubar";
 import Page from "./hoc/Page/Page";
 import { menus } from "./myInfo/_menubar";
@@ -20,6 +21,7 @@ function App() {
   };
   return (
     <div>
+      <Progressbar />
       <Menubar handleChange={handleChange} />
       <Page focusTarget={focusTarget} />
     </div>
