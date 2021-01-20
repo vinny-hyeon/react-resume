@@ -14,7 +14,6 @@ const ProgressContainer = styled.div`
 `;
 
 function getCurrentScrollPercentage() {
-  console.log("hi");
   return (
     (window.scrollY /
       (document.documentElement.scrollHeight - window.innerHeight)) *
@@ -24,6 +23,8 @@ function getCurrentScrollPercentage() {
 
 function Progressbar(props) {
   const [percent, setPercent] = useState(0);
+  const [isActive, setIsActive] = useState(true);
+  const [color, setColor] = useState("black");
 
   const handleScroll = () => {
     setPercent(getCurrentScrollPercentage());
@@ -34,9 +35,26 @@ function Progressbar(props) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (window.scrollY < props.menusTop[1]) setColor("black");
+    else if (window.scrollY < props.menusTop[2]) setColor("olive");
+    else setColor("teal");
+    // else if (window.scrollY < props.menusTop[3]) setColor("teal");
+    // else setColor("orange")
+
+    if (percent > 99) setIsActive(false);
+    else setIsActive(true);
+  }, [percent]);
   return (
     <ProgressContainer>
-      <Progress percent={percent} />
+      <Progress
+        percent={percent}
+        active={isActive}
+        success={!isActive}
+        size="small"
+        color={color}
+      />
     </ProgressContainer>
   );
 }
