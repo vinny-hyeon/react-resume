@@ -37,11 +37,10 @@ function Progressbar(props) {
   }, []);
 
   useEffect(() => {
-    if (window.scrollY < props.menusTop[1]) setColor("black");
-    else if (window.scrollY < props.menusTop[2]) setColor("olive");
-    else setColor("teal");
-    // else if (window.scrollY < props.menusTop[3]) setColor("teal");
-    // else setColor("orange")
+    if (window.scrollY + 50 < props.menusTop[1]) setColor("black");
+    else if (window.scrollY + 50 < props.menusTop[2]) setColor("olive");
+    else if (window.scrollY + 50 < props.menusTop[3]) setColor("teal");
+    else setColor("orange");
 
     if (percent > 99) setIsActive(false);
     else setIsActive(true);

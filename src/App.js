@@ -10,8 +10,7 @@ function App() {
   const menusTop = [];
 
   useEffect(() => {
-    // 완성되면 i < 3 => i < menus.length로 고치면 됨
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < menus.length; i++) {
       menusTop.push(
         focusTarget.current[i].offsetTop +
           focusTarget.current[i].offsetParent.offsetTop
