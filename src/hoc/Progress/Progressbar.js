@@ -16,8 +16,8 @@ const ProgressContainer = styled.div`
 function getCurrentScrollPercentage() {
   console.log("hi");
   return (
-    ((window.scrollY + window.innerHeight) /
-      document.documentElement.scrollHeight) *
+    (window.scrollY /
+      (document.documentElement.scrollHeight - window.innerHeight)) *
     100
   );
 }
