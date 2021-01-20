@@ -12,7 +12,7 @@ const StyleContainer = styled.div`
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 `;
 
-function Container(props) {
+function ProjectContainer(props) {
   return (
     <div>
       <StyleContainer>
@@ -24,4 +24,4 @@ function Container(props) {
   );
 }
 
-export default Container;
+export default ProjectContainer;
