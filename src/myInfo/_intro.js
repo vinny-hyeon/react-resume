@@ -13,7 +13,7 @@ export const myInfos = [
   },
   {
     label: "Major GPA",
-    data: "3.81 / 4.5",
+    data: "3.83 / 4.5",
   },
   {
     label: "Hobby",
