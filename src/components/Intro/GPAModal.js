@@ -95,7 +95,7 @@ function GPAModal() {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Icon name="question circle" />}
+      trigger={<Icon style={{ cursor: "pointer" }} name="question circle" />}
     >
       <Modal.Header>전공 학점</Modal.Header>
       <Modal.Content>

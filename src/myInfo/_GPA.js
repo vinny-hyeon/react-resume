@@ -12,7 +12,7 @@ export const scoreTable = {
 
 export const gpa = [
   {
-    semester: "1학년 1학기",
+    semester: "1학년 1학기(2015)",
     isRegister: true,
     subject: [
       {
@@ -33,7 +33,7 @@ export const gpa = [
     ],
   },
   {
-    semester: "1학년 2학기",
+    semester: "1학년 2학기(2015)",
     isRegister: true,
     subject: [
       {
@@ -49,7 +49,7 @@ export const gpa = [
     ],
   },
   {
-    semester: "2학년 1학기",
+    semester: "2학년 1학기(2016)",
     isRegister: true,
     subject: [
       {
@@ -75,7 +75,7 @@ export const gpa = [
     ],
   },
   {
-    semester: "2학년 2학기",
+    semester: "2학년 2학기(2018)",
     isRegister: true,
     subject: [
       {
@@ -106,7 +106,7 @@ export const gpa = [
     ],
   },
   {
-    semester: "3학년 1학기",
+    semester: "3학년 1학기(2019)",
     isRegister: true,
     subject: [
       {
@@ -147,7 +147,7 @@ export const gpa = [
     ],
   },
   {
-    semester: "3학년 2학기",
+    semester: "3학년 2학기(2020)",
     isRegister: true,
     subject: [
       {
