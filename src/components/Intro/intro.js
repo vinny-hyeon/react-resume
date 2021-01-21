@@ -4,6 +4,7 @@ import { FlexBox } from "../reuseable/styles";
 import profile from "../../img/profile.jpg";
 import { Flag, Icon } from "semantic-ui-react";
 import { myInfos, linkData } from "../../myInfo/_intro";
+import GPAModal from "./GPAModal";
 
 const IntroContainer = styled.div`
   position: relative;
@@ -67,13 +68,18 @@ const IconsBox = styled.div`
 `;
 
 function Intro(props) {
+  const detailGPAModal = () => {
+    return <GPAModal />;
+  };
+
   const renderMyInfos = (arr) => {
     return arr.map((info, idx) => (
       <FlexBox>
         <div className="flex-2 label">{info.label}</div>
         <div className="flex-1">&nbsp;</div>
         <div className="flex-6" style={{ marginRight: "45px" }}>
-          {info.data}
+          {info.data}&nbsp;
+          {info.label === "Major GPA" && detailGPAModal()}
         </div>
       </FlexBox>
     ));
