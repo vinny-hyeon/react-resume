@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FlexBox } from "../reuseable/styles";
-import { Button, Modal, Checkbox } from "semantic-ui-react";
+import { Button, Modal } from "semantic-ui-react";
 import { Icon, Tab, Divider } from "semantic-ui-react";
 import { gpa, scoreTable } from "../../myInfo/_GPA";
 import styled from "styled-components";
