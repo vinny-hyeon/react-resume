@@ -14,7 +14,8 @@ export const mainExperience = [
     ],
     result: "개발한 프로그램에 대한 책임감을 크게 배울 수 있었습니다.",
     references: {
-      pdf: "",
+      pdf:
+        "https://drive.google.com/file/d/1X8RTXKl3CKqhYBnw7_CJ76wDdBQmNBPd/view?usp=sharing",
     },
   },
   {
@@ -27,9 +28,9 @@ export const mainExperience = [
     ],
     content: [
       "교내 과 밴드동아리로 오디션을 통해 합격",
-      "일렉기타",
-      "중앙대 공대 새내기배움터에서 공연",
-      "학기별로 공연 총 3회",
+      "일렉기타 연주",
+      "공대 새내기배움터에서 공연",
+      "학기별로 장소를 대여하여 공연 총 3회",
     ],
     result: "많은 사람들 앞에서 공연을 하여 큰 용기를 얻을 수 있었습니다.",
     references: {
@@ -37,15 +38,20 @@ export const mainExperience = [
     },
   },
   {
-    name: "봉사 활동(RCY)",
+    name: "봉사 활동",
     duration: "2015.03~",
     imgAlt: "봉사 사진",
     imgURL: [
       require("../img/volunteer1.jpeg").default,
       require("../img/volunteer2.jpg").default,
     ],
-    content: ["", "", "", ""],
-    result: "봉사활동을 통해 나 스스로를 되돌아 보는 시간을 많이 갖게 되었다.",
+    content: [
+      "RCY동아리에 활동하며 여러 기관에서 봉사",
+      "유기견 봉사",
+      "개인적으로 꾸준히 헌혈 참가",
+    ],
+    result: "봉사활동을 통해 스스로를 되돌아 보는 시간을 많이 갖게 되었습니다.",
+    references: {},
   },
 ];
 

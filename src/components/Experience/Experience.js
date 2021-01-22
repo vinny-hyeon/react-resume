@@ -45,6 +45,10 @@ const ExperienceContainer = styled.div`
   .Arrow:hover {
     background-color: white;
   }
+  .result {
+    font-size: 15px;
+    font-weight: bold;
+  }
 `;
 
 function Experience(props) {
@@ -57,6 +61,34 @@ function Experience(props) {
     }
     setImgNum(imgNumTemp);
   }, []);
+
+  const renderLink = (obj) => {
+    const iconNameColor = {
+      pdf: ["file pdf outline", "#bf5d7a"],
+      youtube: ["youtube play", "#ff0000"],
+    };
+    return ["pdf", "youtube"].map((platform) => {
+      return (
+        obj[platform] && (
+          <div>
+            <br />
+            <a href={obj[platform]} target="_blank">
+              <Icon
+                style={{ color: iconNameColor[platform][1] }}
+                name={iconNameColor[platform][0]}
+              />
+            </a>
+          </div>
+        )
+      );
+    });
+  };
+
+  const renderContent = (arr) => {
+    return arr.map((ele) => {
+      return <div>-{ele}</div>;
+    });
+  };
 
   const renderMainExperience = () => {
     return mainExperience.map((ele, idx) => {
@@ -101,7 +133,10 @@ function Experience(props) {
               ></Button>
             </div>
             <div className="flex-6" style={{ paddingTop: "30px" }}>
-              {ele.content[0]}
+              {renderContent(ele.content)}
+              <br />
+              <div className="result">{ele.result}</div>
+              {renderLink(ele.references)}
             </div>
           </FlexBox>
         </div>
