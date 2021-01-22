@@ -4,6 +4,7 @@ import { FlexBox } from "../reuseable/styles";
 import profile from "../../img/profile.jpg";
 import { Flag, Icon } from "semantic-ui-react";
 import { myInfos, linkData } from "../../myInfo/_intro";
+import Contact from "../Contact/Contact";
 import GPAModal from "./GPAModal";
 
 const IntroContainer = styled.div`
@@ -68,8 +69,15 @@ const IconsBox = styled.div`
 `;
 
 function Intro(props) {
+  const [openContactModal, setOpenContactModal] = useState(false);
   const detailGPAModal = () => {
     return <GPAModal />;
+  };
+
+  const renderContactModal = () => {
+    return (
+      <Contact open={openContactModal} handleChange={setOpenContactModal} />
+    );
   };
 
   const renderMyInfos = (arr) => {
@@ -86,13 +94,24 @@ function Intro(props) {
   };
 
   const renderLink = (arr) => {
-    return arr.map((data, idx) => (
-      <div className="flex-1">
-        <a href={data.address} target="_blank">
+    return arr.map((data, idx) =>
+      data.domain === "google" ? (
+        <div
+          className="flex-1"
+          onClick={() => {
+            setOpenContactModal(true);
+          }}
+        >
           <Icon className={[data.domain, "myicon"]} name={data.iconName} />
-        </a>
-      </div>
-    ));
+        </div>
+      ) : (
+        <div className="flex-1">
+          <a href={data.address} target="_blank">
+            <Icon className={[data.domain, "myicon"]} name={data.iconName} />
+          </a>
+        </div>
+      )
+    );
   };
 
   return (
@@ -105,7 +124,7 @@ function Intro(props) {
           <div className="flex-6" style={{ paddingTop: "30px" }}>
             <div className="job">Frontend Developer</div>
             <div className="name" style={{ marginTop: "15px" }}>
-              권현빈
+              권현빈{renderContactModal()}
               <Flag name="kr" />
             </div>
             <br />
