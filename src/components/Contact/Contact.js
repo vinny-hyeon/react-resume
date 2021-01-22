@@ -1,6 +1,8 @@
 import React from "react";
 import emailjs from "emailjs-com";
 import { emailJsKey } from "../../myInfo/_contact";
+import { FlexBox } from "../reuseable/styles";
+
 import {
   Button,
   Modal,
@@ -23,10 +25,11 @@ function ContactUs(props) {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          alert("메일 전송에 성공하였습니다.");
+          props.handleChange(false);
         },
         (error) => {
-          console.log(error.text);
+          alert("메일 전송에 실패하였습니다.");
         }
       );
   }
@@ -35,20 +38,22 @@ function ContactUs(props) {
       <Modal.Header>Contact</Modal.Header>
       <Form onSubmit={sendEmail}>
         <Modal.Content>
-          <Form.Field>
-            <Label>To</Label>
-            <Input value={emailJsKey.myEmail} name="user_email" readOnly />
-          </Form.Field>
-          <Form.Field>
-            <Label>From</Label>
-            <Input name="from_name" placeholder="이름/기업" />
-          </Form.Field>
+          <FlexBox>
+            <Form.Field className="flex-1">
+              <Label>From</Label>
+              <Input name="from_name" placeholder="Email/Phone" />
+            </Form.Field>
+            <Form.Field className="flex-1">
+              <Label>To</Label>
+              <Input value={emailJsKey.myEmail} name="user_email" readOnly />
+            </Form.Field>
+          </FlexBox>
           <Form.Field>
             <Label>Message</Label>
             <TextArea name="message" placeholder="Message" rows={10} />
           </Form.Field>
         </Modal.Content>
-        <Modal.Actions style={{ float: "right" }}>
+        <Modal.Actions style={{ float: "right", margin: "10px" }}>
           <Button color="red" onClick={() => props.handleChange(false)}>
             취소
           </Button>
