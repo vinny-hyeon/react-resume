@@ -3,15 +3,7 @@ import emailjs from "emailjs-com";
 import { emailJsKey } from "../../myInfo/_contact";
 import { FlexBox } from "../reuseable/styles";
 
-import {
-  Button,
-  Modal,
-  Form,
-  Input,
-  TextArea,
-  Label,
-  Confirm,
-} from "semantic-ui-react";
+import { Button, Modal, Form, Input, TextArea, Label } from "semantic-ui-react";
 
 function ContactUs(props) {
   function sendEmail(e) {

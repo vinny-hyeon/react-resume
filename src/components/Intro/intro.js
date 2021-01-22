@@ -116,6 +116,7 @@ function Intro(props) {
 
   return (
     <div ref={(el) => (props.focusTarget.current[0] = el)}>
+      {renderContactModal()}
       <IntroContainer>
         <FlexBox>
           <div className="flex-4" style={{ padding: "25px" }}>
@@ -124,7 +125,7 @@ function Intro(props) {
           <div className="flex-6" style={{ paddingTop: "30px" }}>
             <div className="job">Frontend Developer</div>
             <div className="name" style={{ marginTop: "15px" }}>
-              권현빈{renderContactModal()}
+              권현빈
               <Flag name="kr" />
             </div>
             <br />
