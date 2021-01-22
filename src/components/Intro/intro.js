@@ -4,6 +4,8 @@ import { FlexBox } from "../reuseable/styles";
 import profile from "../../img/profile.jpg";
 import { Flag, Icon } from "semantic-ui-react";
 import { myInfos, linkData } from "../../myInfo/_intro";
+import Contact from "../Contact/Contact";
+import GPAModal from "./GPAModal";
 
 const IntroContainer = styled.div`
   position: relative;
@@ -67,30 +69,54 @@ const IconsBox = styled.div`
 `;
 
 function Intro(props) {
+  const [openContactModal, setOpenContactModal] = useState(false);
+  const detailGPAModal = () => {
+    return <GPAModal />;
+  };
+
+  const renderContactModal = () => {
+    return (
+      <Contact open={openContactModal} handleChange={setOpenContactModal} />
+    );
+  };
+
   const renderMyInfos = (arr) => {
     return arr.map((info, idx) => (
       <FlexBox>
         <div className="flex-2 label">{info.label}</div>
         <div className="flex-1">&nbsp;</div>
         <div className="flex-6" style={{ marginRight: "45px" }}>
-          {info.data}
+          {info.data}&nbsp;
+          {info.label === "Major GPA" && detailGPAModal()}
         </div>
       </FlexBox>
     ));
   };
 
   const renderLink = (arr) => {
-    return arr.map((data, idx) => (
-      <div className="flex-1">
-        <a href={data.address} target="_blank">
+    return arr.map((data, idx) =>
+      data.domain === "google" ? (
+        <div
+          className="flex-1"
+          onClick={() => {
+            setOpenContactModal(true);
+          }}
+        >
           <Icon className={[data.domain, "myicon"]} name={data.iconName} />
-        </a>
-      </div>
-    ));
+        </div>
+      ) : (
+        <div className="flex-1">
+          <a href={data.address} target="_blank">
+            <Icon className={[data.domain, "myicon"]} name={data.iconName} />
+          </a>
+        </div>
+      )
+    );
   };
 
   return (
     <div ref={(el) => (props.focusTarget.current[0] = el)}>
+      {renderContactModal()}
       <IntroContainer>
         <FlexBox>
           <div className="flex-4" style={{ padding: "25px" }}>
