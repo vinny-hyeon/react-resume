@@ -1,7 +1,15 @@
 import React from "react";
 import emailjs from "emailjs-com";
 import { emailJsKey } from "../../myInfo/_contact";
-import { Button, Modal } from "semantic-ui-react";
+import {
+  Button,
+  Modal,
+  Form,
+  Input,
+  TextArea,
+  Label,
+  Confirm,
+} from "semantic-ui-react";
 
 function ContactUs(props) {
   function sendEmail(e) {
@@ -23,33 +31,37 @@ function ContactUs(props) {
       );
   }
   return (
-    <Modal
-      //   onClose={() => props.handleChange(false)}
-      //   onOpen={() => props.handleChange(true)}
-      open={props.open}
-    >
-      <Modal.Header>Select a Photo</Modal.Header>
-      <Modal.Content>
-        <form className="contact-form" onSubmit={sendEmail}>
-          {" "}
-          <input type="hidden" name="contact_number" /> <label>Name</label>{" "}
-          <input type="text" name="user_name" /> <label>Email</label>{" "}
-          <input type="email" name="user_email" /> <label>Message</label>{" "}
-          <textarea name="message" /> <input type="submit" value="Send" />{" "}
-        </form>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button color="black" onClick={() => props.handleChange(false)}>
-          Nope
-        </Button>
-        <Button
-          content="Yep, that's me"
-          labelPosition="right"
-          icon="checkmark"
-          onClick={() => props.handleChange(false)}
-          positive
-        />
-      </Modal.Actions>
+    <Modal open={props.open}>
+      <Modal.Header>Contact</Modal.Header>
+      <Form onSubmit={sendEmail}>
+        <Modal.Content>
+          <Form.Field>
+            <Label>To</Label>
+            <Input value={emailJsKey.myEmail} name="user_email" readOnly />
+          </Form.Field>
+          <Form.Field>
+            <Label>From</Label>
+            <Input name="from_name" placeholder="이름/기업" />
+          </Form.Field>
+          <Form.Field>
+            <Label>Message</Label>
+            <TextArea name="message" placeholder="Message" rows={10} />
+          </Form.Field>
+        </Modal.Content>
+        <Modal.Actions style={{ float: "right" }}>
+          <Button color="red" onClick={() => props.handleChange(false)}>
+            취소
+          </Button>
+          <Button
+            type="submit"
+            value="Send"
+            content="제출"
+            labelPosition="right"
+            icon="checkmark"
+            positive
+          />
+        </Modal.Actions>
+      </Form>
     </Modal>
   );
 }
