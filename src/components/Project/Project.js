@@ -31,6 +31,10 @@ const ProjectContainer = styled.div`
 const ContentContainer = styled.div`
   width: 90%;
   margin-left: 10px;
+  letter-spacing: 0.5px;
+  .content {
+    margin-top: 5px;
+  }
 `;
 
 function Project(props) {
@@ -51,6 +55,12 @@ function Project(props) {
     project.color = "#5CD3F3";
     project.index = 2;
   }
+  const renderContent = (arr) => {
+    return arr.map((ele) => {
+      return <div className="content">-{ele}</div>;
+    });
+  };
+
   const renderLink = (obj) => {
     const iconNameColor = {
       github: ["github", "#24292e"],
@@ -95,9 +105,7 @@ function Project(props) {
             <div className="flex-1">&nbsp;</div>
             <div className="flex-7">
               <h3>{ele.title}</h3>
-              <ContentContainer>
-                <div>{ele.content}</div>
-              </ContentContainer>
+              <ContentContainer>{renderContent(ele.content)}</ContentContainer>
             </div>
           </FlexBox>
           <br />
