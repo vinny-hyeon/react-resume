@@ -51,6 +51,15 @@ const ExperienceContainer = styled.div`
   }
 `;
 
+const ContentContainer = styled.div`
+  width: 90%;
+  margin-left: 10px;
+  letter-spacing: 0.5px;
+  .content {
+    margin-top: 5px;
+  }
+`;
+
 function Experience(props) {
   const [imgNum, setImgNum] = useState([]);
   let imgNumTemp = [];
@@ -86,7 +95,7 @@ function Experience(props) {
 
   const renderContent = (arr) => {
     return arr.map((ele) => {
-      return <div>-{ele}</div>;
+      return <div className="content">-{ele}</div>;
     });
   };
 
@@ -133,7 +142,7 @@ function Experience(props) {
               ></Button>
             </div>
             <div className="flex-6" style={{ paddingTop: "30px" }}>
-              {renderContent(ele.content)}
+              <ContentContainer>{renderContent(ele.content)}</ContentContainer>
               <br />
               <div className="result">{ele.result}</div>
               {renderLink(ele.references)}
