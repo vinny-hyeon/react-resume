@@ -17,7 +17,7 @@ export const myInfos = [
   },
   {
     label: "Hobby",
-    data: "Soccer",
+    data: "축구",
   },
   {
     label: "Introduce",
