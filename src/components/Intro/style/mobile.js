@@ -40,29 +40,30 @@ const IntroContainer = styled.div`
 
 const IconsBox = styled.div`
   position: absolute;
-  bottom: 0;
-  height: 70px;
-  width: 100%;
-  background-color: #555;
-  padding: 20px 0;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  margin: 20px;
+
   i {
     font-size: 40px;
     color: white;
+    margin-top: 5px;
   }
   .myicon {
     cursor: pointer;
     transition: 0.5s;
   }
-  .github:hover {
+  .github {
     color: #302f2f;
   }
-  .facebook:hover {
+  .facebook {
     color: #4064ac;
   }
-  .google:hover {
+  .google {
     color: #ad2f20;
   }
-  .blog:hover {
+  .blog {
     color: #00c73c;
   }
 `;

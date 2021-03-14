@@ -160,13 +160,7 @@ function Intro(props) {
             <div className="job">Frontend Developer</div>
             <div className="intro">{renderMyInfos(myInfos)}</div>
           </div>
-          {/* <IconsBox>
-            <FlexBox>
-              <div className="flex-1" />
-              {renderLink(linkData)}
-              <div className="flex-1" />
-            </FlexBox>
-          </IconsBox> */}
+          <mobileStyle.IconsBox>{renderLink(linkData)}</mobileStyle.IconsBox>
         </mobileStyle.IntroContainer>
       </Mobile>
     </div>
