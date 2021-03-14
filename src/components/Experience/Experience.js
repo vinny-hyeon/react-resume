@@ -11,11 +11,11 @@ const ExperienceContainer = styled.div`
   width: 1000px;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
   .leftContainer {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 50px;
   }
   .rightContainer {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-right: 50px;
     text-align: right;
   }
