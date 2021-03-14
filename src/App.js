@@ -4,6 +4,7 @@ import Progressbar from "./hoc/Progress/Progressbar";
 import Menubar from "./hoc/Menu/Menubar";
 import Page from "./hoc/Page/Page";
 import { menus } from "./myInfo/_menubar";
+import { Mobile, PC } from "./hook/mediaQuery";
 
 function App() {
   const focusTarget = useRef([]);
@@ -33,8 +34,10 @@ function App() {
   };
   return (
     <div>
-      <Progressbar menusTop={menusTop} />
-      <Menubar handleChange={handleChange} />
+      <PC>
+        <Progressbar menusTop={menusTop} />
+        <Menubar handleChange={handleChange} />
+      </PC>
       <Page focusTarget={focusTarget} />
     </div>
   );
