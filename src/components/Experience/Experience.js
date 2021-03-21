@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { FlexBox } from "../reuseable/styles";
 import { Icon, Button } from "semantic-ui-react";
 import { mainExperience } from "../../myInfo/_experience";
+import { Mobile, PC } from "../../hook/mediaQuery";
+import { mobileStyle } from "./style/mobile";
+
 const ExperienceContainer = styled.div`
   position: relative;
   margin: 0 auto;
@@ -107,6 +110,7 @@ function Experience(props) {
             {ele.name} ({ele.duration})
           </div>
           <FlexBox
+            className="device"
             style={idx % 2 === 0 ? null : { flexDirection: "row-reverse" }}
           >
             <div className="flex-4 pictureContainer">
@@ -154,10 +158,18 @@ function Experience(props) {
   };
   return (
     <div ref={(el) => (props.focusTarget.current[3] = el)}>
-      <ExperienceContainer>
-        <h1>Experience</h1>
-        {renderMainExperience()}
-      </ExperienceContainer>
+      <PC>
+        <ExperienceContainer>
+          <h1>Experience</h1>
+          {renderMainExperience()}
+        </ExperienceContainer>
+      </PC>
+      <Mobile>
+        <mobileStyle.ExperienceContainer>
+          <h1>Experience</h1>
+          {renderMainExperience()}
+        </mobileStyle.ExperienceContainer>
+      </Mobile>
     </div>
   );
 }
