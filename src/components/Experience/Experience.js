@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { FlexBox } from "../reuseable/styles";
 import { Icon, Button } from "semantic-ui-react";
 import { mainExperience } from "../../myInfo/_experience";
+import { Mobile, PC } from "../../hook/mediaQuery";
+import { mobileStyle } from "./style/mobile";
+
 const ExperienceContainer = styled.div`
   position: relative;
   margin: 0 auto;
@@ -11,11 +14,11 @@ const ExperienceContainer = styled.div`
   width: 1000px;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
   .leftContainer {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-left: 50px;
   }
   .rightContainer {
-    margin-top: 100px;
+    margin-top: 50px;
     margin-right: 50px;
     text-align: right;
   }
@@ -107,6 +110,7 @@ function Experience(props) {
             {ele.name} ({ele.duration})
           </div>
           <FlexBox
+            className="device"
             style={idx % 2 === 0 ? null : { flexDirection: "row-reverse" }}
           >
             <div className="flex-4 pictureContainer">
@@ -142,7 +146,16 @@ function Experience(props) {
               ></Button>
             </div>
             <div className="flex-6" style={{ paddingTop: "30px" }}>
-              <ContentContainer>{renderContent(ele.content)}</ContentContainer>
+              <PC>
+                <ContentContainer>
+                  {renderContent(ele.content)}
+                </ContentContainer>
+              </PC>
+              <Mobile>
+                <mobileStyle.ContentContainer>
+                  {renderContent(ele.content)}
+                </mobileStyle.ContentContainer>
+              </Mobile>
               <br />
               <div className="result">{ele.result}</div>
               {renderLink(ele.references)}
@@ -154,10 +167,18 @@ function Experience(props) {
   };
   return (
     <div ref={(el) => (props.focusTarget.current[3] = el)}>
-      <ExperienceContainer>
-        <h1>Experience</h1>
-        {renderMainExperience()}
-      </ExperienceContainer>
+      <PC>
+        <ExperienceContainer>
+          <h1>Experience</h1>
+          {renderMainExperience()}
+        </ExperienceContainer>
+      </PC>
+      <Mobile>
+        <mobileStyle.ExperienceContainer>
+          <h1>Experience</h1>
+          {renderMainExperience()}
+        </mobileStyle.ExperienceContainer>
+      </Mobile>
     </div>
   );
 }
