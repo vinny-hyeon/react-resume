@@ -8,11 +8,12 @@ export const mainExperience = [
       require("../img/internship2.jpg").default,
     ],
     content: [
-      "눈 높이 차이가 초래하는 시각 경험의 개인차 연구에 관한 연구에 응용 프로그램 개발자",
-      "사람들이 위 연구에 실험하기에 편리한 프로그램을 MATLAB을 이용하여 개발",
-      "프로젝트로 2019년 8월에 일본 오사카에서 열린 학회 APCV에도 참가.(http://visionsociety.jp/apcv2019)",
+      "눈 높이 차이가 초래하는 시각 경험의 개인차 연구에 관한 연구에 필요한 실험 프로그램 개발",
+      "MATLAB으로 개발",
+      "해당 연구로 2019년 8월 일본 오사카에서 열린 학회 APCV에 참가.(http://visionsociety.jp/apcv2019)",
     ],
-    result: "개발한 프로그램에 대한 책임감을 크게 배울 수 있었습니다.",
+    result:
+      "직접 개발한 프로그램으로 진행한 연구로 국제 학회에 참여하여 개발에 대한 책임감을 배울 수 있었습니다.",
     references: {
       pdf:
         "https://drive.google.com/file/d/1X8RTXKl3CKqhYBnw7_CJ76wDdBQmNBPd/view?usp=sharing",
@@ -27,12 +28,13 @@ export const mainExperience = [
       require("../img/band2.PNG").default,
     ],
     content: [
-      "교내 과 밴드동아리로 오디션을 통해 합격",
-      "일렉기타 연주",
-      "공대 새내기배움터에서 공연",
-      "학기별로 장소를 대여하여 공연 총 3회",
+      "과 밴드동아리로 2주간의 간단한 오디션을 통해 합격",
+      "동아리 활동으로 일렉기타를 1년 6개월간 동아리 합주실에서 연습",
+      "한학기에 한번씩 장소를 대여하여 소규모 공연",
+      "새내기배움터에서 공대 신입생들을 위해 공연",
     ],
-    result: "많은 사람들 앞에서 공연을 하여 큰 용기를 얻을 수 있었습니다.",
+    result:
+      "많은 사람들 앞에서 공연을 하며 용기와 도전의식을 얻을 수 있었습니다.",
     references: {
       youtube: "https://www.youtube.com/watch?v=1mhF-TlUL38",
     },
@@ -45,11 +47,7 @@ export const mainExperience = [
       require("../img/volunteer1.jpeg").default,
       require("../img/volunteer2.jpg").default,
     ],
-    content: [
-      "RCY동아리에 활동하며 여러 기관에서 봉사",
-      "유기견 봉사",
-      "개인적으로 꾸준히 헌혈 참가",
-    ],
+    content: ["RCY동아리 활동", "꾸준한 헌혈 활동", "유기견 봉사 활동"],
     result: "봉사활동을 통해 스스로를 되돌아 보는 시간을 많이 갖게 되었습니다.",
     references: {},
   },

@@ -4,6 +4,8 @@ import { FlexBox } from "../reuseable/styles";
 import { rnProject } from "../../myInfo/_reactnative";
 import { reactProject } from "../../myInfo/_reactjs";
 import { Icon } from "semantic-ui-react";
+import { Mobile, PC } from "../../hook/mediaQuery";
+import { mobileStyle } from "./style/mobile";
 
 const ProjectContainer = styled.div`
   margin-left: 100px;
@@ -94,11 +96,11 @@ function Project(props) {
       }
     );
   };
-  const renderProject = (arr) => {
+  const renderProject = (arr, media) => {
     return arr.map((ele) => {
       return (
         <div>
-          <FlexBox>
+          <FlexBox style={media === "pc" ? null : { flexDirection: "column" }}>
             <div className="flex-2 period">
               <h3 style={{ color: "#cfc9c9" }}>{ele.period}</h3>
             </div>
@@ -117,10 +119,18 @@ function Project(props) {
   };
   return (
     <div ref={(el) => (props.focusTarget.current[project.index] = el)}>
-      <ProjectContainer>
-        <h2 style={{ color: project.color }}>&bull; {project.title}</h2>
-        {renderProject(project.data)}
-      </ProjectContainer>
+      <PC>
+        <ProjectContainer>
+          <h2 style={{ color: project.color }}>&bull; {project.title}</h2>
+          {renderProject(project.data, "pc")}
+        </ProjectContainer>
+      </PC>
+      <Mobile>
+        <mobileStyle.ProjectContainer>
+          <h2 style={{ color: project.color }}>&bull; {project.title}</h2>
+          {renderProject(project.data, "mobile")}
+        </mobileStyle.ProjectContainer>
+      </Mobile>
     </div>
   );
 }

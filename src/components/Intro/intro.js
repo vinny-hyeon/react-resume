@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FlexBox } from "../reuseable/styles";
 import profile from "../../img/profile.jpg";
+import mobileProfile from "../../img/profile2.jpg";
 import { Flag, Icon } from "semantic-ui-react";
 import { myInfos, linkData } from "../../myInfo/_intro";
 import Contact from "../Contact/Contact";
 import GPAModal from "./GPAModal";
+import { Mobile, PC } from "../../hook/mediaQuery";
+import { mobileStyle } from "./style/mobile";
 
 const IntroContainer = styled.div`
   position: relative;
@@ -14,10 +17,6 @@ const IntroContainer = styled.div`
   width: 1000px;
   height: 440px;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
-  .label {
-    font-weight: bold;
-    text-align: right;
-  }
 
   .me {
     width: 90%;
@@ -36,6 +35,14 @@ const IntroContainer = styled.div`
     border-bottom: 0.5px solid black;
     padding-bottom: 10px;
     width: 90%;
+  }
+  .label {
+    font-weight: bold;
+    text-align: right;
+  }
+
+  .content {
+    margin-right: 45px;
   }
 `;
 
@@ -82,10 +89,10 @@ function Intro(props) {
 
   const renderMyInfos = (arr) => {
     return arr.map((info, idx) => (
-      <FlexBox>
+      <FlexBox style={{ marginTop: 3 }}>
         <div className="flex-2 label">{info.label}</div>
         <div className="flex-1">&nbsp;</div>
-        <div className="flex-6" style={{ marginRight: "45px" }}>
+        <div className="flex-6 content">
           {info.data}&nbsp;
           {info.label === "Major GPA" && detailGPAModal()}
         </div>
@@ -116,30 +123,46 @@ function Intro(props) {
 
   return (
     <div ref={(el) => (props.focusTarget.current[0] = el)}>
-      {renderContactModal()}
-      <IntroContainer>
-        <FlexBox>
-          <div className="flex-4" style={{ padding: "25px" }}>
-            <img className="me" alt="프로필 사진" src={profile} />
-          </div>
-          <div className="flex-6" style={{ paddingTop: "30px" }}>
-            <div className="job">Frontend Developer</div>
-            <div className="name" style={{ marginTop: "15px" }}>
-              권현빈
-              <Flag name="kr" />
-            </div>
-            <br />
-            {renderMyInfos(myInfos)}
-          </div>
-        </FlexBox>
-        <IconsBox>
+      <PC>
+        {renderContactModal()}
+        <IntroContainer>
           <FlexBox>
-            <div className="flex-1" />
-            {renderLink(linkData)}
-            <div className="flex-1" />
+            <div className="flex-4" style={{ padding: "25px" }}>
+              <img className="me" alt="프로필 사진" src={profile} />
+            </div>
+            <div className="flex-6" style={{ paddingTop: "30px" }}>
+              <div className="job">Frontend Developer</div>
+              <div className="name" style={{ marginTop: "15px" }}>
+                권현빈
+                <Flag name="kr" />
+              </div>
+              <br />
+              {renderMyInfos(myInfos)}
+            </div>
           </FlexBox>
-        </IconsBox>
-      </IntroContainer>
+          <IconsBox>
+            <FlexBox>
+              <div className="flex-1" />
+              {renderLink(linkData)}
+              <div className="flex-1" />
+            </FlexBox>
+          </IconsBox>
+        </IntroContainer>
+      </PC>
+      <Mobile>
+        {renderContactModal()}
+        <mobileStyle.IntroContainer>
+          <div>
+            <img className="me" alt="프로필 사진" src={mobileProfile} />
+          </div>
+          <div>
+            <div className="name">권현빈</div>
+            <div className="job">Frontend Developer</div>
+            <div className="intro">{renderMyInfos(myInfos)}</div>
+          </div>
+          <mobileStyle.IconsBox>{renderLink(linkData)}</mobileStyle.IconsBox>
+        </mobileStyle.IntroContainer>
+      </Mobile>
     </div>
   );
 }
