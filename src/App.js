@@ -35,9 +35,12 @@ function App() {
   return (
     <div>
       <PC>
-        <Progressbar menusTop={menusTop} />
+        <Progressbar menusTop={menusTop} device="pc" />
         <Menubar handleChange={handleChange} />
       </PC>
+      <Mobile>
+        <Progressbar menusTop={menusTop} device="mobile" />
+      </Mobile>
       <Page focusTarget={focusTarget} />
     </div>
   );
