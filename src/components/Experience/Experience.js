@@ -146,7 +146,16 @@ function Experience(props) {
               ></Button>
             </div>
             <div className="flex-6" style={{ paddingTop: "30px" }}>
-              <ContentContainer>{renderContent(ele.content)}</ContentContainer>
+              <PC>
+                <ContentContainer>
+                  {renderContent(ele.content)}
+                </ContentContainer>
+              </PC>
+              <Mobile>
+                <mobileStyle.ContentContainer>
+                  {renderContent(ele.content)}
+                </mobileStyle.ContentContainer>
+              </Mobile>
               <br />
               <div className="result">{ele.result}</div>
               {renderLink(ele.references)}
