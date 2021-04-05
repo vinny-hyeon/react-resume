@@ -13,6 +13,14 @@ const ProgressContainer = styled.div`
   margin-left: 80px;
 `;
 
+const MobileProgressContainer = styled.div`
+  position: fixed;
+  width: 90%;
+  margin-left: 5%;
+  z-index: 100;
+  transform-origin: left;
+`;
+
 function getCurrentScrollPercentage() {
   return (
     (window.scrollY /
@@ -25,10 +33,12 @@ function Progressbar(props) {
   const [percent, setPercent] = useState(0);
   const [isActive, setIsActive] = useState(true);
   const [color, setColor] = useState("black");
+  const isMobile = props.device === "mobile";
 
   const handleScroll = () => {
     setPercent(getCurrentScrollPercentage());
   };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -45,17 +55,31 @@ function Progressbar(props) {
     if (percent > 99) setIsActive(false);
     else setIsActive(true);
   }, [percent]);
-  return (
-    <ProgressContainer>
-      <Progress
-        percent={percent}
-        active={isActive}
-        success={!isActive}
-        size="small"
-        color={color}
-      />
-    </ProgressContainer>
-  );
+  if (!isMobile) {
+    return (
+      <ProgressContainer>
+        <Progress
+          percent={percent}
+          active={isActive}
+          success={!isActive}
+          size="small"
+          color={color}
+        />
+      </ProgressContainer>
+    );
+  } else {
+    return (
+      <MobileProgressContainer>
+        <Progress
+          percent={percent}
+          active={isActive}
+          success={!isActive}
+          size="small"
+          color={color}
+        />
+      </MobileProgressContainer>
+    );
+  }
 }
 
 export default Progressbar;
