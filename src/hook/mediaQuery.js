@@ -15,4 +15,11 @@ const PC = ({ children }) => {
   return <>{isPc && children}</>;
 };
 
-export { Mobile, PC };
+const PCwithMenubar = ({ children }) => {
+  const isPCwithMenubar = useMediaQuery({
+    query: "(min-width:1300px) ",
+  });
+  return <>{isPCwithMenubar && children}</>;
+};
+
+export { Mobile, PC, PCwithMenubar };
