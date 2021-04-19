@@ -1,5 +1,24 @@
 export const mainExperience = [
   {
+    name: "하얀마인드 리엑트네이티브 인턴",
+    duration: "2021.03~2021.06",
+    imgAlt: "단체 사진",
+    imgURL: [],
+    content: [
+      "어플 이용 연간 가격 A/B테스트를 통해 매출율 증대",
+      "ReactNative로 메세지 오디오 seek bar 구현",
+      "Firebase functions, githubwebhook, slack incomming webhook를 통해 Slack Chat bot 개발, 개발자 리뷰 문화 활성화",
+      "code review, PP를 통해 효율적이고 readable한 코드 작성",
+      "Shape up 방법론을 통해 책임감 있고 기한을 준수하는 개발 문화 경험",
+      "글로벌 서비스 기업이라 대부분 영어로 하여 영어 실력 향상",
+    ],
+    result:
+      "최신 기술을 배우고, 러닝 커브를 극도로 높일 수 있었습니다. 협업을 통해 맡은 일이 무엇인지 확실하게 파악하고, 기한내에 마무리 하였습니다.",
+    references: {
+      pdf: "",
+    },
+  },
+  {
     name: "중앙대학교 심리학과 연구실 인턴",
     duration: "2019.03~2019.08",
     imgAlt: "오사카 학회사진",
@@ -34,7 +53,7 @@ export const mainExperience = [
       "새내기배움터에서 공대 신입생들을 위해 공연",
     ],
     result:
-      "많은 사람들 앞에서 공연을 하며 용기와 도전의식을 얻을 수 있었습니다.",
+      "많은 사람들 앞에서 공연을 하며 용기와 도전의식을 배울 수 있었습니다.",
     references: {
       youtube: "https://www.youtube.com/watch?v=1mhF-TlUL38",
     },
