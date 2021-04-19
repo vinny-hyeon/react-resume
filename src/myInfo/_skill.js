@@ -13,7 +13,7 @@ export const skillTable = [
     },
     {
         skill: 'ReactNative',
-        level: 3.5,
+        level: 3,
         intro: ['인턴', '어플 출시', '캡스톤 프로젝트'],
         color: 'yellow'
     },
@@ -46,7 +46,7 @@ export const skillTable = [
 export const skillDescription = [
     {
         title: 'JavaScript',
-        content: 'JS'
+        content: '주 언어로 React, ReactNative, Vanilla등 다양한 프레임워크와 함께 사용하였다.'
     },
     {
         title: 'TypeScript',
