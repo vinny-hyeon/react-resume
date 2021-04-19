@@ -15,23 +15,23 @@ const StlyeContainer = styled.div`
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 `;
 
-function SkillContainer(props){
-    return(
-        <div>
-            <PC>
-                <StlyeContainer>
-                    <h1>Skill</h1>
-                    <Skill focusTarget={props.focusTarget}/>
-                </StlyeContainer>
-            </PC>
-            <Mobile>
-                <StlyeContainer>
-                    <h1>Skill</h1>
-                    <Skill focusTarget={props.focusTarget}/>
-                </StlyeContainer>
-            </Mobile>
-        </div>
-    )
+function SkillContainer(props) {
+  return (
+    <div ref={(el) => (props.focusTarget.current[props.targetIndex] = el)}>
+      <PC>
+        <StlyeContainer>
+          <h1>Skill</h1>
+          <Skill focusTarget={props.focusTarget} />
+        </StlyeContainer>
+      </PC>
+      <Mobile>
+        <StlyeContainer>
+          <h1>Skill</h1>
+          <Skill focusTarget={props.focusTarget} />
+        </StlyeContainer>
+      </Mobile>
+    </div>
+  );
 }
 
 export default SkillContainer;

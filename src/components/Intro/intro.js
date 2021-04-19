@@ -123,7 +123,7 @@ function Intro(props) {
   };
 
   return (
-    <div ref={(el) => (props.focusTarget.current[0] = el)}>
+    <div ref={(el) => (props.focusTarget.current[props.targetIndex] = el)}>
       <PC>
         {renderContactModal()}
         <IntroContainer>

@@ -15,7 +15,7 @@ const StyleContainer = styled.div`
 
 function ProjectContainer(props) {
   return (
-    <div>
+    <div ref={(el) => (props.focusTarget.current[props.targetIndex] = el)}>
       <PC>
         <StyleContainer>
           <h1>Project</h1>
