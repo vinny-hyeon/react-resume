@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Progress } from "semantic-ui-react";
 import styled from "styled-components";
+import colors from "styles/Colors/ColorsLightMode";
 
 const ProgressContainer = styled.div`
   position: fixed;
@@ -46,10 +47,15 @@ function Progressbar(props) {
   }, []);
 
   useEffect(() => {
-    if (window.scrollY + 50 < props.menusTop[1]) setColor("black");
-    else if (window.scrollY + 50 < props.menusTop[2]) setColor("olive");
-    else if (window.scrollY + 50 < props.menusTop[3]) setColor("teal");
-    else setColor("orange");
+    if (window.scrollY + 50 < props.menusTop[1]) {
+      setColor(colors.introColor);
+    } else if (window.scrollY + 50 < props.menusTop[2]) {
+      setColor(colors.skillColor);
+    } else if (window.scrollY + 50 < props.menusTop[3]) {
+      setColor(colors.projectColor);
+    } else {
+      setColor(colors.experienceColor);
+    }
 
     if (percent > 99) setIsActive(false);
     else setIsActive(true);
