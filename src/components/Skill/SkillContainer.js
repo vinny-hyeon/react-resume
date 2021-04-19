@@ -11,6 +11,7 @@ const StlyeContainer = styled.div`
   margin-top: 40px;
   padding: 30px;
   width: 1000px;
+  height: 500px;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
 `;
 

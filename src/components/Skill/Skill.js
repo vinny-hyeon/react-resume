@@ -46,7 +46,7 @@ const ProgressContainer = styled.div`
 
 const ContentContainer = styled.div`
     flex: 1;
-
+    margin: 0 30px;
 `
 
 const indexIcon = <Icon className="icon" name="arrow right"/>
@@ -58,18 +58,23 @@ function Skill(props){
 
     const renderSkill = () => {
         return skillTable.map((ele, idx) => {
+            const clickedIndex = index;
+            const hoveredIndex = preIndex;
+            const isFocus = clickedIndex === idx || hoveredIndex === idx;
+
             return (
             <SkillElementContainer onClick={() => setIndex(idx)} onMouseOver={() => setPreIndex(idx)} onMouseOut={() => setPreIndex(index)}>
                 <IndexContainer>
-                    {index === idx ? selectedIcon : indexIcon}
+                    {clickedIndex === idx ? selectedIcon : indexIcon}
                 </IndexContainer>
                 <ProgressContainer>
-                    <div className="skillName" style={index === idx ? {} : {color:'gray'}}>{ele.skill}</div>
+                    <div className="skillName" style={clickedIndex === idx ? {} : {color:'gray'}}>{ele.skill}</div>
                     <Progress
                         value={ele.level}
                         total="5"
                         progress="ratio"
-                        size={index === idx || preIndex === idx ? "medium" : "small"}
+                        disabled={!isFocus}
+                        size={isFocus ? "medium" : "small"}
                         color={ele.color}
                     />
                 </ProgressContainer>
