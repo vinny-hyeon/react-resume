@@ -50,12 +50,10 @@ function Project(props) {
     project.data = rnProject;
     project.title = "ReactNative";
     project.color = "#87BF00";
-    project.index = 1;
   } else if (props.tech === "React") {
     project.data = reactProject;
     project.title = "React";
     project.color = "#5CD3F3";
-    project.index = 2;
   }
   const renderContent = (arr) => {
     return arr.map((ele) => {
@@ -118,7 +116,7 @@ function Project(props) {
     });
   };
   return (
-    <div ref={(el) => (props.focusTarget.current[project.index] = el)}>
+    <div>
       <PC>
         <ProjectContainer>
           <h2 style={{ color: project.color }}>&bull; {project.title}</h2>

@@ -166,7 +166,7 @@ function Experience(props) {
     });
   };
   return (
-    <div ref={(el) => (props.focusTarget.current[3] = el)}>
+    <div ref={(el) => (props.focusTarget.current[props.targetIndex] = el)}>
       <PC>
         <ExperienceContainer>
           <h1>Experience</h1>

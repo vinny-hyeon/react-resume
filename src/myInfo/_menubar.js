@@ -1,23 +1,24 @@
+import colors from "styles/Colors/ColorsLightMode";
+
 export const menus = [
   {
     icon: "user",
-    color: "black",
+    color: colors.introColor,
     text: "Intro",
   },
   {
-    icon: "mobile",
-    color: "#87BF00",
-    text: "ReactNative",
+    icon: "flask",
+    color: colors.skillColor,
+    text: "Skill",
   },
   {
-    icon: "react",
-    color: "#5CD3F3",
-    text: "ReactJS",
+    icon: "folder outline",
+    color: colors.projectColor,
+    text: "Project",
   },
-
   {
     icon: "coffee",
-    color: "#DE6800",
+    color: colors.experienceColor,
     text: "Experience",
   },
 ];
