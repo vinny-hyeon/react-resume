@@ -4,13 +4,12 @@ import styled from "styled-components";
 
 const ProgressContainer = styled.div`
   position: fixed;
-  /* margin-top: 300px; */
-  width: 560px;
-  -ms-transform: rotate(90deg); // IE 9 이상에서 사용
-  -webkit-transform: rotate(90deg); // 사파리, 크롬, 오페라 브라우저 사용
-  transform: rotate(90deg);
+  width: 100%;
+  z-index: 100;
   transform-origin: left;
-  margin-left: 80px;
+  /* -ms-transform: rotate(90deg); // IE 9 이상에서 사용
+  -webkit-transform: rotate(90deg); // 사파리, 크롬, 오페라 브라우저 사용
+  transform: rotate(90deg); */
 `;
 
 const MobileProgressContainer = styled.div`

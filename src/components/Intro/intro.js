@@ -13,7 +13,7 @@ import { mobileStyle } from "./style/mobile";
 const IntroContainer = styled.div`
   position: relative;
   margin: 0 auto;
-  margin-top: 40px;
+  padding-top: 10px;
   width: 1000px;
   height: 440px;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
@@ -51,8 +51,9 @@ const IconsBox = styled.div`
   bottom: 0;
   height: 70px;
   width: 100%;
-  background-color: #555;
-  padding: 20px 0;
+  background-color: #ac9973;
+  padding: 25px 0;
+  padding-left: 50px;
   i {
     font-size: 40px;
     color: white;

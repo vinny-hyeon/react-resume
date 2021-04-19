@@ -9,7 +9,7 @@ export const myInfos = [
   },
   {
     label: "Email",
-    data: "bini0823@cau.ac.kr",
+    data: "4ever960823@gamil.com",
   },
   {
     label: "Major GPA",
