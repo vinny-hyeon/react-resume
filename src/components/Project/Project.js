@@ -6,6 +6,7 @@ import { reactProject } from "../../myInfo/_reactjs";
 import { Icon } from "semantic-ui-react";
 import { Mobile, PC } from "../../hook/mediaQuery";
 import { mobileStyle } from "./style/mobile";
+import { domains, domainIcons } from "components/reuseable/domains";
 
 const ProjectContainer = styled.div`
   margin-left: 100px;
@@ -50,12 +51,10 @@ function Project(props) {
     project.data = rnProject;
     project.title = "ReactNative";
     project.color = "#87BF00";
-    project.index = 1;
   } else if (props.tech === "React") {
     project.data = reactProject;
     project.title = "React";
     project.color = "#5CD3F3";
-    project.index = 2;
   }
   const renderContent = (arr) => {
     return arr.map((ele) => {
@@ -64,27 +63,20 @@ function Project(props) {
   };
 
   const renderLink = (obj) => {
-    const iconNameColor = {
-      github: ["github", "#24292e"],
-      manual: ["file pdf outline", "#bf5d7a"],
-      playStore: ["google play", "#01e871"],
-      youtube: ["youtube play", "#ff0000"],
-      url: ["google", ""],
-    };
-
-    return ["github", "manual", "playStore", "youtube", "url"].map(
-      (platform) => {
+    console.log(obj);
+    return domains.map((domain) => {
+      if (~Object.keys(obj).indexOf(domain)) {
         return (
-          obj[platform] && (
+          obj[domain] && (
             <div>
               <FlexBox>
-                <div className="flex-2 linkTitle">{platform}</div>
+                <div className="flex-2 linkTitle">{domain}</div>
                 <div className="flex-1">&nbsp;</div>
                 <div className="flex-7">
-                  <a href={obj[platform]} target="_blank">
+                  <a href={obj[domain]} target="_blank">
                     <Icon
-                      style={{ color: iconNameColor[platform][1] }}
-                      name={iconNameColor[platform][0]}
+                      style={{ color: domainIcons[domain][1] }}
+                      name={domainIcons[domain][0]}
                     />
                   </a>
                 </div>
@@ -94,8 +86,9 @@ function Project(props) {
           )
         );
       }
-    );
+    });
   };
+
   const renderProject = (arr, media) => {
     return arr.map((ele) => {
       return (
@@ -118,7 +111,7 @@ function Project(props) {
     });
   };
   return (
-    <div ref={(el) => (props.focusTarget.current[project.index] = el)}>
+    <div>
       <PC>
         <ProjectContainer>
           <h2 style={{ color: project.color }}>&bull; {project.title}</h2>

@@ -10,7 +10,7 @@ export const rnProject = [
       "프론트는 ReactNative, Redux, Thunk, ReactNative-Paper을 사용하여 Git, 소스트리, Slack을 통해 협업",
     ],
     github: "https://github.com/capstoneCau",
-    manual:
+    pdf:
       "https://drive.google.com/file/d/11vIR8GYi9RmdnIb0QAhpE1rKTcJWoDzc/view?usp=sharing",
   },
   {

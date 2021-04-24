@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Progress } from "semantic-ui-react";
 import styled from "styled-components";
+import colors from "styles/Colors/ColorsLightMode";
 
 const ProgressContainer = styled.div`
   position: fixed;
-  /* margin-top: 300px; */
-  width: 560px;
-  -ms-transform: rotate(90deg); // IE 9 이상에서 사용
-  -webkit-transform: rotate(90deg); // 사파리, 크롬, 오페라 브라우저 사용
-  transform: rotate(90deg);
+  width: 100%;
+  z-index: 100;
   transform-origin: left;
-  margin-left: 80px;
+  /* -ms-transform: rotate(90deg); // IE 9 이상에서 사용
+  -webkit-transform: rotate(90deg); // 사파리, 크롬, 오페라 브라우저 사용
+  transform: rotate(90deg); */
+`;
+
+const MobileProgressContainer = styled.div`
+  position: fixed;
+  width: 90%;
+  margin-left: 5%;
+  z-index: 100;
+  transform-origin: left;
 `;
 
 const MobileProgressContainer = styled.div`
@@ -47,10 +55,15 @@ function Progressbar(props) {
   }, []);
 
   useEffect(() => {
-    if (window.scrollY + 50 < props.menusTop[1]) setColor("black");
-    else if (window.scrollY + 50 < props.menusTop[2]) setColor("olive");
-    else if (window.scrollY + 50 < props.menusTop[3]) setColor("teal");
-    else setColor("orange");
+    if (window.scrollY + 50 < props.menusTop[1]) {
+      setColor(colors.introColor);
+    } else if (window.scrollY + 50 < props.menusTop[2]) {
+      setColor(colors.skillColor);
+    } else if (window.scrollY + 50 < props.menusTop[3]) {
+      setColor(colors.projectColor);
+    } else {
+      setColor(colors.experienceColor);
+    }
 
     if (percent > 99) setIsActive(false);
     else setIsActive(true);

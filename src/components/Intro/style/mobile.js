@@ -3,8 +3,9 @@ import styled from "styled-components";
 
 const IntroContainer = styled.div`
   position: relative;
-  margin: 10px;
   width: ${window.innerWidth};
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 20px;
   box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3);
   .me {
