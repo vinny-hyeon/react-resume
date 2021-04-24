@@ -5,6 +5,7 @@ import { Icon, Button } from "semantic-ui-react";
 import { mainExperience } from "../../myInfo/_experience";
 import { Mobile, PC } from "../../hook/mediaQuery";
 import { mobileStyle } from "./style/mobile";
+import { domains, domainIcons } from "components/reuseable/domains";
 
 const ExperienceContainer = styled.div`
   position: relative;
@@ -75,24 +76,22 @@ function Experience(props) {
   }, []);
 
   const renderLink = (obj) => {
-    const iconNameColor = {
-      pdf: ["file pdf outline", "#bf5d7a"],
-      youtube: ["youtube play", "#ff0000"],
-    };
-    return ["pdf", "youtube"].map((platform) => {
-      return (
-        obj[platform] && (
-          <div>
-            <br />
-            <a href={obj[platform]} target="_blank">
-              <Icon
-                style={{ color: iconNameColor[platform][1] }}
-                name={iconNameColor[platform][0]}
-              />
-            </a>
-          </div>
-        )
-      );
+    return domains.map((domain) => {
+      if (~Object.keys(obj).indexOf(domain)) {
+        return (
+          obj[domain] && (
+            <div>
+              <br />
+              <a href={obj[domain]} target="_blank">
+                <Icon
+                  style={{ color: domainIcons[domain][1] }}
+                  name={domainIcons[domain][0]}
+                />
+              </a>
+            </div>
+          )
+        );
+      }
     });
   };
 
@@ -123,6 +122,7 @@ function Experience(props) {
               <Button
                 className="Arrow"
                 icon="caret square left outline"
+                disabled={ele.imgURL.length < 2}
                 onClick={() => {
                   let temp = imgNum.slice();
                   temp[idx]--;
@@ -135,6 +135,7 @@ function Experience(props) {
               <Button
                 className="Arrow"
                 icon="caret square right outline"
+                disabled={ele.imgURL.length < 2}
                 onClick={() => {
                   let temp = imgNum.slice();
                   temp[idx]++;

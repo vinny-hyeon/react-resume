@@ -6,6 +6,7 @@ import { reactProject } from "../../myInfo/_reactjs";
 import { Icon } from "semantic-ui-react";
 import { Mobile, PC } from "../../hook/mediaQuery";
 import { mobileStyle } from "./style/mobile";
+import { domains, domainIcons } from "components/reuseable/domains";
 
 const ProjectContainer = styled.div`
   margin-left: 100px;
@@ -62,27 +63,20 @@ function Project(props) {
   };
 
   const renderLink = (obj) => {
-    const iconNameColor = {
-      github: ["github", "#24292e"],
-      manual: ["file pdf outline", "#bf5d7a"],
-      playStore: ["google play", "#01e871"],
-      youtube: ["youtube play", "#ff0000"],
-      url: ["google", ""],
-    };
-
-    return ["github", "manual", "playStore", "youtube", "url"].map(
-      (platform) => {
+    console.log(obj);
+    return domains.map((domain) => {
+      if (~Object.keys(obj).indexOf(domain)) {
         return (
-          obj[platform] && (
+          obj[domain] && (
             <div>
               <FlexBox>
-                <div className="flex-2 linkTitle">{platform}</div>
+                <div className="flex-2 linkTitle">{domain}</div>
                 <div className="flex-1">&nbsp;</div>
                 <div className="flex-7">
-                  <a href={obj[platform]} target="_blank">
+                  <a href={obj[domain]} target="_blank">
                     <Icon
-                      style={{ color: iconNameColor[platform][1] }}
-                      name={iconNameColor[platform][0]}
+                      style={{ color: domainIcons[domain][1] }}
+                      name={domainIcons[domain][0]}
                     />
                   </a>
                 </div>
@@ -92,8 +86,9 @@ function Project(props) {
           )
         );
       }
-    );
+    });
   };
+
   const renderProject = (arr, media) => {
     return arr.map((ele) => {
       return (
