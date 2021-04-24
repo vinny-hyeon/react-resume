@@ -21,14 +21,6 @@ const MobileProgressContainer = styled.div`
   transform-origin: left;
 `;
 
-const MobileProgressContainer = styled.div`
-  position: fixed;
-  width: 90%;
-  margin-left: 5%;
-  z-index: 100;
-  transform-origin: left;
-`;
-
 function getCurrentScrollPercentage() {
   return (
     (window.scrollY /
