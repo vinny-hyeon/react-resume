@@ -53,6 +53,10 @@ const ExperienceContainer = styled.div`
     font-size: 15px;
     font-weight: bold;
   }
+  .domainLink {
+    display: flex;
+    flex-direction: row;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -159,7 +163,7 @@ function Experience(props) {
               </Mobile>
               <br />
               <div className="result">{ele.result}</div>
-              {renderLink(ele.references)}
+              <div className="domainLink">{renderLink(ele.references)}</div>
             </div>
           </FlexBox>
         </div>
