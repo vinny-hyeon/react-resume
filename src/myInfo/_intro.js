@@ -1,7 +1,7 @@
 export const myInfos = [
   {
     label: "School",
-    data: "중앙대학교(2015.03 ~ )",
+    data: "중앙대학교(2015.03 ~ 2022.02)",
   },
   {
     label: "Major",
@@ -9,7 +9,7 @@ export const myInfos = [
   },
   {
     label: "Email",
-    data: "4ever960823@gamil.com",
+    data: "4ever960823@gmail.com",
   },
   {
     label: "Major GPA",
@@ -22,7 +22,7 @@ export const myInfos = [
   {
     label: "Introduce",
     data:
-      "긍정적이고 좋아하는 일은 하루종일 할 정도로 열심히합니다. 다양한 스포츠를 잘하고 좋아합니다. 열정적이고 좋은 분들과 함께 일하며 배워보고 싶습니다.",
+      "러닝커브가 가파르고, 긍정적이며, '왜?' 라는 의문을 가지며 공부하고자 노력합니다. 다양한 스포츠, 특히 축구, 배드민턴을 좋아하고 잘합니다. 열정적이고 좋은 분들과 함께 일하고 배우며 10년, 20년후에도 흥미를 잃지않고 지금처럼 행복하게 개발하고 싶습니다.",
   },
 ];
 

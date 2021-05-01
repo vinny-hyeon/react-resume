@@ -101,7 +101,7 @@ function Experience(props) {
 
   const renderContent = (arr) => {
     return arr.map((ele) => {
-      return <div className="content">-{ele}</div>;
+      return <li className="content">{ele}</li>;
     });
   };
 
@@ -121,6 +121,7 @@ function Experience(props) {
                 className="picture"
                 alt={ele.imgAlt}
                 src={ele.imgURL[imgNum[idx]]}
+                loading="lazy"
               />
               <br />
               <Button
