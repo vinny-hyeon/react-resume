@@ -58,12 +58,11 @@ function Project(props) {
   }
   const renderContent = (arr) => {
     return arr.map((ele) => {
-      return <div className="content">-{ele}</div>;
+      return <li className="content">{ele}</li>;
     });
   };
 
   const renderLink = (obj) => {
-    console.log(obj);
     return domains.map((domain) => {
       if (~Object.keys(obj).indexOf(domain)) {
         return (
@@ -100,7 +99,9 @@ function Project(props) {
             <div className="flex-1">&nbsp;</div>
             <div className="flex-7">
               <h3>{ele.title}</h3>
-              <ContentContainer>{renderContent(ele.content)}</ContentContainer>
+              <ContentContainer>
+                <ul>{renderContent(ele.content)}</ul>
+              </ContentContainer>
             </div>
           </FlexBox>
           <br />

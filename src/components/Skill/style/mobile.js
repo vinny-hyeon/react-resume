@@ -23,6 +23,9 @@ const SkillContainer = styled.div`
     flex-direction: column;
     text-align: center;
   }
+  .content {
+    text-align: left;
+  }
 `;
 
 export const mobileStyle = {

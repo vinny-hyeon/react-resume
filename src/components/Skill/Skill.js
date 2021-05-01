@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo } from "react";
 import { skillTable, skillDescription } from "../../myInfo/_skill";
-import { Flag, Icon } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 import { Progress } from "semantic-ui-react";
 import styled from "styled-components";
 import { Mobile, PC } from "../../hook/mediaQuery";
@@ -19,6 +19,10 @@ const SkillContainer = styled.div`
     flex: 1;
     flex-direction: column;
     text-align: center;
+  }
+  .content {
+    text-align: left;
+    line-height: 50px;
   }
 `;
 
@@ -96,12 +100,16 @@ function Skill(props) {
     });
   };
 
+  const renderContent = (contents) => {
+    return contents.map((ele) => <li className="content">{ele}</li>);
+  };
+
   const renderDescription = () => {
     const skill = skillDescription[index];
     return (
       <ContentContainer>
         <h1>{skill.title}</h1>
-        <p>{skill.content}</p>
+        <ul>{renderContent(skill.content)}</ul>
       </ContentContainer>
     );
   };
