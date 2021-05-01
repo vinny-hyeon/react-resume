@@ -21,7 +21,7 @@ const SkillContainer = styled.div`
   .description {
     flex: 1;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
   }
   .content {
     text-align: left;
