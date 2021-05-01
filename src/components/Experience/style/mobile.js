@@ -16,7 +16,7 @@ const ExperienceContainer = styled.div`
 
   .title {
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .pictureContainer {
@@ -45,6 +45,11 @@ const ExperienceContainer = styled.div`
   .result {
     font-size: 15px;
     font-weight: bold;
+  }
+  .domainLink {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
   }
 `;
 

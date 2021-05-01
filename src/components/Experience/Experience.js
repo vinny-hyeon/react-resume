@@ -63,6 +63,7 @@ const ContentContainer = styled.div`
   width: 90%;
   margin-left: 10px;
   letter-spacing: 0.5px;
+  text-align: left;
   .content {
     margin-top: 5px;
   }
@@ -101,7 +102,7 @@ function Experience(props) {
 
   const renderContent = (arr) => {
     return arr.map((ele) => {
-      return <div className="content">-{ele}</div>;
+      return <li className="content">{ele}</li>;
     });
   };
 
@@ -121,6 +122,7 @@ function Experience(props) {
                 className="picture"
                 alt={ele.imgAlt}
                 src={ele.imgURL[imgNum[idx]]}
+                loading="lazy"
               />
               <br />
               <Button
@@ -153,12 +155,12 @@ function Experience(props) {
             <div className="flex-6" style={{ paddingTop: "30px" }}>
               <PC>
                 <ContentContainer>
-                  {renderContent(ele.content)}
+                  <ul>{renderContent(ele.content)}</ul>
                 </ContentContainer>
               </PC>
               <Mobile>
                 <mobileStyle.ContentContainer>
-                  {renderContent(ele.content)}
+                  <ul>{renderContent(ele.content)}</ul>
                 </mobileStyle.ContentContainer>
               </Mobile>
               <br />

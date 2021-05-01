@@ -5,9 +5,9 @@ export const mainExperience = [
     imgAlt: "단체 사진",
     imgURL: [require("img/hayanMind1.jpg").default],
     content: [
-      "어플 이용 연간 가격 측정 A/B테스트를 통해 매출율 증대",
-      "ReactNative로 메세지 오디오 seek bar 구현",
-      "Firebase functions, githubwebhook, slack incomming webhook를 통해 Slack Chat bot 개발, 개발자 리뷰 문화 활성화",
+      "어플 이용료 연간 가격 측정 A/B테스트를 통해 매출율 증대",
+      "사용자의 편의를 위한 메세지 오디오 탐색바, 일시정지 기능 구현",
+      "Firebase functions, githubwebhook, slack incomming webhook를 통해 Slack Chat bot 개발하여 개발자 리뷰 문화 활성화",
       "code review, PP를 통해 효율적이고 readable한 코드 작성",
       "Shape up 방법론을 통해 책임감 있고 기한을 준수하는 개발 문화 경험",
       "글로벌 서비스 기업이라 매주 회의 및 문서 작성을 영어로하여 영어 실력 향상",
@@ -51,10 +51,10 @@ export const mainExperience = [
       require("../img/band2.PNG").default,
     ],
     content: [
-      "과 밴드동아리로 2주간의 간단한 오디션을 통해 합격",
-      "동아리 활동으로 일렉기타를 1년 6개월간 동아리 합주실에서 연습",
-      "한학기에 한번씩 장소를 대여하여 소규모 공연",
-      "새내기배움터에서 공대 신입생들을 위해 공연",
+      "과 밴드동아리로 2주간의 연습을 통해 오디션에 합격",
+      "1년 6개월간 동아리 합주실에서 일렉기타 연습",
+      "한 학기에 한번 장소를 대여하여 소규모 공연",
+      "공대 새내기배움터에서 신입생들을 위해 대규모 공연",
     ],
     result:
       "많은 사람들 앞에서 공연을 하며 용기와 도전의식을 배울 수 있었습니다.",
