@@ -4,7 +4,7 @@ import Skill from "./Skill";
 import { Mobile, PC } from "../../hook/mediaQuery";
 import { mobileStyle } from "./style/mobile";
 
-const StlyeContainer = styled.div`
+const StyleContainer = styled.div`
   margin-left: 100px;
   position: relative;
   margin: 0 auto;
@@ -19,16 +19,16 @@ function SkillContainer(props) {
   return (
     <div ref={(el) => (props.focusTarget.current[props.targetIndex] = el)}>
       <PC>
-        <StlyeContainer>
+        <StyleContainer>
           <h1>Skill</h1>
           <Skill focusTarget={props.focusTarget} />
-        </StlyeContainer>
+        </StyleContainer>
       </PC>
       <Mobile>
-        <StlyeContainer>
+        <mobileStyle.StyleContainer>
           <h1>Skill</h1>
           <Skill focusTarget={props.focusTarget} />
-        </StlyeContainer>
+        </mobileStyle.StyleContainer>
       </Mobile>
     </div>
   );

@@ -1,15 +1,17 @@
 import React, { useState, useCallback, useMemo } from "react";
-import { Mobile, PC } from "../../hook/mediaQuery";
 import { skillTable, skillDescription } from "../../myInfo/_skill";
 import { Flag, Icon } from "semantic-ui-react";
 import { Progress } from "semantic-ui-react";
 import styled from "styled-components";
+import { Mobile, PC } from "../../hook/mediaQuery";
+import { mobileStyle } from "./style/mobile";
 
 const SkillContainer = styled.div`
   display: flex;
   flex: 1;
   flex-direction: row;
   .skill {
+    display: flex;
     flex: 1;
     flex-direction: column;
   }
@@ -106,10 +108,18 @@ function Skill(props) {
 
   return (
     <div>
-      <SkillContainer>
-        <div className="skill">{renderSkill()}</div>
-        <div className="description">{renderDescription()}</div>
-      </SkillContainer>
+      <PC>
+        <SkillContainer>
+          <div className="skill">{renderSkill()}</div>
+          <div className="description">{renderDescription()}</div>
+        </SkillContainer>
+      </PC>
+      <Mobile>
+        <mobileStyle.SkillContainer>
+          <div className="skill">{renderSkill()}</div>
+          <div className="description">{renderDescription()}</div>
+        </mobileStyle.SkillContainer>
+      </Mobile>
     </div>
   );
 }
