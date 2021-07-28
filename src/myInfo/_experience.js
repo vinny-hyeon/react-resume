@@ -1,19 +1,21 @@
 export const mainExperience = [
   {
     name: "하얀마인드 인턴",
-    duration: "2021.03~2021.06",
+    duration: "2021.03~2021.08",
     imgAlt: "단체 사진",
     imgURL: [require("img/hayanMind1.jpg").default],
     content: [
-      "어플 이용료 연간 가격 측정 A/B테스트를 통해 매출율 증대",
-      "사용자의 편의를 위한 메세지 오디오 탐색바, 일시정지 기능 구현",
-      "Firebase functions, githubwebhook, slack incomming webhook를 통해 Slack Chat bot 개발하여 개발자 리뷰 문화 활성화",
+      "연간 구독 아이템 가격 선정을 위한 A/B 테스트를 개발",
+      "연간 구독 아이템 가격 A/B 테스트를 통한 매출액 13% 향상",
+      "사용자 데이터 분석을 통해 매출액 증가를 위한 A/B 테스트 3가지 개발",
+      "음성 메세지 탐색바, 일시정지 기능 구현",
+      "Firebase functions, githubwebhook, slack incomming webhook를 통해 Slack Chat bot 개발하여 사내 개발자 리뷰 문화 활성화",
       "code review, PP를 통해 효율적이고 readable한 코드 작성",
-      "Shape up 방법론을 통해 책임감 있고 기한을 준수하는 개발 문화 경험",
-      "글로벌 서비스 기업이라 매주 회의 및 문서 작성을 영어로하여 영어 실력 향상",
+      "Shape up 방법론을 통한 책임감 있고 기한을 준수하는 개발 문화 경험",
+      "글로벌 서비스를 제공하는 기업 영어 능력 및 다양한 언어 이슈 경험",
     ],
     result:
-      "최신 기술을 배우고, 러닝 커브를 극도로 높일 수 있었습니다. 협업을 통해 맡은 일이 무엇인지 확실하게 파악하고, 기한내에 마무리 하였습니다.",
+      "최신 기술을 배우고, 러닝 커브를 극도로 높일 수 있었습니다. 협업을 통해 맡은 일이 무엇인지 확실하게 파악하고, 기한내에 잘 마무리 할 수 있었습니다. 재사용할 수 있는 코드, 이해하기 쉬운 코드를 개발하는 능력이 늘었습니다.",
     references: {
       url: "https://hayanmind.com/",
       playStore:
@@ -38,8 +40,7 @@ export const mainExperience = [
     result:
       "직접 개발한 프로그램으로 진행한 연구로 국제 학회에 참여하여 개발에 대한 책임감을 배울 수 있었습니다.",
     references: {
-      pdf:
-        "https://drive.google.com/file/d/1X8RTXKl3CKqhYBnw7_CJ76wDdBQmNBPd/view?usp=sharing",
+      pdf: "https://drive.google.com/file/d/1X8RTXKl3CKqhYBnw7_CJ76wDdBQmNBPd/view?usp=sharing",
     },
   },
   {
