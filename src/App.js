@@ -6,6 +6,8 @@ import Page from "./hoc/Page/Page";
 import { menus } from "./myInfo/_menubar";
 import { Mobile, PC, PCwithMenubar } from "./hook/mediaQuery";
 import GameList from "game/GameList";
+import NBack from "game/NBack";
+import CatchCat from "game/CatchCat";
 
 function App() {
   const focusTarget = useRef([]);
@@ -56,6 +58,8 @@ function App() {
             }
           ></Route>
           <Route path="/game" element={<GameList />}></Route>
+          <Route path="/nBack" element={<NBack />}></Route>
+          <Route path="/catchCat" element={<CatchCat />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
