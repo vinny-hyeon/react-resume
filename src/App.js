@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import styled from "styled-components";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Progressbar from "./hoc/Progress/Progressbar";
 import Menubar from "./hoc/Menu/Menubar";
 import Page from "./hoc/Page/Page";
 import { menus } from "./myInfo/_menubar";
 import { Mobile, PC, PCwithMenubar } from "./hook/mediaQuery";
+import GameList from "game/GameList";
 
 function App() {
   const focusTarget = useRef([]);
@@ -13,8 +14,8 @@ function App() {
   useEffect(() => {
     for (let i = 0; i < menus.length; i++) {
       menusTop.push(
-        focusTarget.current[i].offsetTop +
-          focusTarget.current[i].offsetParent.offsetTop
+        focusTarget.current[i]?.offsetTop +
+          focusTarget.current[i]?.offsetParent.offsetTop
       );
     }
   }, []);
@@ -33,17 +34,30 @@ function App() {
     scrollToRef(value);
   };
   return (
-    <div>
-      <PC>
-        <Progressbar menusTop={menusTop} device="pc" />
-        <PCwithMenubar>
-          <Menubar handleChange={handleChange} />
-        </PCwithMenubar>
-      </PC>
-      <Mobile>
-        <Progressbar menusTop={menusTop} device="mobile" />
-      </Mobile>
-      <Page focusTarget={focusTarget} />
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Link to="/game">Play Game</Link>
+                <PC>
+                  <Progressbar menusTop={menusTop} device="pc" />
+                  <PCwithMenubar>
+                    <Menubar handleChange={handleChange} />
+                  </PCwithMenubar>
+                </PC>
+                <Mobile>
+                  <Progressbar menusTop={menusTop} device="mobile" />
+                </Mobile>
+                <Page focusTarget={focusTarget} />
+              </>
+            }
+          ></Route>
+          <Route path="/game" element={<GameList />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
